@@ -1,3 +1,4 @@
+
 /** Implementation of Josephus problem.  The Josephus problem
     is named aftr the historian Flavius Josephus.  For more
     information on this problem visit:
@@ -205,6 +206,7 @@ public class CircularList <E> {
        }
 	   E the_object = get(index);
 	   remove(the_object);
+	   count--;
 	   return the_object;
 	   
 	     /*
@@ -244,8 +246,8 @@ public class CircularList <E> {
          temp2.next = temp1.next;
        }
        */
-       count--;
-       return head.data; //is this correct?
+       
+        //is this correct?
        
      }
 
@@ -453,4 +455,3 @@ public class CircularList <E> {
        }
     }
 }
-
