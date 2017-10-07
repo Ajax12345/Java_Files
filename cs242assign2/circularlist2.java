@@ -1,4 +1,3 @@
-
 /** Implementation of Josephus problem.  The Josephus problem
     is named aftr the historian Flavius Josephus.  For more
     information on this problem visit:
@@ -453,4 +452,5 @@ public class CircularList <E> {
            next = nextNodeRef;
        }
     }
-}sta
+}
+
