@@ -256,7 +256,7 @@ public class CircularList <E> {
 	     @param item item to be removed
 	     @throws NoSuchElementException if the item is not found
 	   */
-	 public void remove(E item) {
+  public void remove(E item) {
      boolean flag = false;
      int counter = 0;
      while (head.next != null)
