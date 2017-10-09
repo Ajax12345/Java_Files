@@ -1,4 +1,3 @@
-
 /** Implementation of Josephus problem.  The Josephus problem
     is named aftr the historian Flavius Josephus.  For more
     information on this problem visit:
@@ -108,11 +107,14 @@ public class CircularList <E> {
         int counter = 0;
         while (temp.next != null)
         {
+          System.out.println("here!!!");
           if (temp.data.equals(o))
           {
+            System.out.println("val is");
+            System.out.println(temp.data);
             return counter;
           }
-          temp.next = temp;
+          temp = temp.next;
           counter++;
         }
         return -1;
@@ -128,19 +130,18 @@ public class CircularList <E> {
          @throws IndexOutOfBoundsException if index is out of range
        */
       public E set(int index, E anEntry) {
-         if ((index < 0) || (index >= count))
-		     throw new IndexOutOfBoundsException(Integer.toString(index));
+         if ((index < 0) || (index >= count)) throw new IndexOutOfBoundsException(Integer.toString(index));
 		     Node<E>newNode = new Node<E>(anEntry);
          Node<E>temp = head;
          for (int i = 0; i < index; i++)
          {
            temp.next = temp;
          }
-         
+
          E holder = temp.data;
-         
+
          head.next = temp.next;
-         head = newNode; 
+         head = newNode;
          count++;
          return holder;
 
@@ -160,8 +161,8 @@ public class CircularList <E> {
      {
        throw new IndexOutOfBoundsException();
      }
-     
-    
+
+
      if (head == null)
      {
        head = newNode;
@@ -188,7 +189,7 @@ public class CircularList <E> {
        }
      }
      count++;
-	
+
 	 }
 
 	 // Complexity O(n)
@@ -208,10 +209,10 @@ public class CircularList <E> {
 	   remove(the_object);
 	   count--;
 	   return the_object;
-	   
+
 	     /*
        Node<E>temp1 = head;
-       
+
        int counter = 0;
        for (int i = 0; i < index; i++)
        {
@@ -222,7 +223,6 @@ public class CircularList <E> {
        if (temp1.next == head)
        {
          head = null;
-
        }
        if (temp1 == head)
        {
@@ -246,9 +246,9 @@ public class CircularList <E> {
          temp2.next = temp1.next;
        }
        */
-       
+
         //is this correct?
-       
+
      }
 
      // Complexity O(n)
@@ -274,7 +274,7 @@ public class CircularList <E> {
      {
        throw new NoSuchElementException();
      }
-     
+
 
      }
 
@@ -284,7 +284,10 @@ public class CircularList <E> {
          @throws IndexOutOfBoundsException if index is invalid
        */
      public void setStartPosition(int index) {
-		 // To be completed by the student
+		     for (int i = 0; i < index; i++)
+         {
+           head = head.next;
+         }
      }
 
      /* This private utility method is used in startJosephus
